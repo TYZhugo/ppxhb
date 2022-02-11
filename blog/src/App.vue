@@ -32,7 +32,7 @@ export default {
   margin-top: 0;
 }
 body{
-  background: linear-gradient(45deg,#8460ed,#dd8fa4);
+  background-color: aquamarine
 }
 button{
   border-radius: 5px;
