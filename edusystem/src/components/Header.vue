@@ -1,6 +1,6 @@
 <template>
   <div class='header'>
-      <h1 class='system'>学生端</h1>
+      <h1 class='system'>教师端</h1>
       <div>
 
         <Dropdown title="个人中心" :items="serves" class="dropdown"/>
@@ -20,7 +20,7 @@ export default {
             serves:[
                 {
                     title:'切换账号',
-                    link:'#'
+                    link:'./Login.vue'
                 },
                 {
                     title:'版本更新',
