@@ -49,6 +49,7 @@ export default {
 .system{
     color:white;
     font-family: "宋体";
+    padding-block-start: 23px;
 }
 .dropdown{
     float:right;

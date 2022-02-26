@@ -40,7 +40,9 @@ export default {
   width: max-content;
   border-radius: 0px 0px 16px 16px;
 }
-.fade-enter-active,
+.fade-enter-active{
+  transition: all .5s ease-in;
+}
 .fade-leave-active {
   transition: all .5s ease-out;
 }
@@ -56,5 +58,9 @@ export default {
 }
 a{
     text-decoration: none;
+}
+.menu-items{
+  background-color: deepskyblue;
+  border-radius: 0px 0px 16px 16px;
 }
 </style>
