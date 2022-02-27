@@ -19,7 +19,8 @@ export default {
   name: 'App',
   data(){
     return{
-      imgUrl1:require('../assets/R-C (2).jpg')
+      imgUrl1:require('../assets/R-C (2).jpg'),
+      list:{}
     }
   },
   components: {
