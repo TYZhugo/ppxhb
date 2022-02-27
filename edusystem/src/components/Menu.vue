@@ -6,12 +6,12 @@
     </div>
     <ul class="menu">
       <li><router-link to="/" >我的班级</router-link></li>
-      <li><router-link to="/Exam">创建试卷</router-link></li>
-      <li><router-link to="">成绩管理</router-link></li>
-      <li><router-link to="">考试发布</router-link></li>
+      <li><router-link to="">创建试卷</router-link></li>
+      <li><router-link to="/Grades">成绩管理</router-link></li>
+      <li><router-link to="/Exam">考试发布</router-link></li>
       <li><router-link to="">实时监控</router-link></li>
       <li><router-link to="">判卷</router-link></li>
-      <li><router-link to="">我的题库</router-link></li>
+      <li><router-link to="/Question">我的题库</router-link></li>
     </ul>
   </div>
 </div>

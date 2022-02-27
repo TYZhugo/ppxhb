@@ -6,7 +6,7 @@
   <Menu></Menu>
 </div>
 <div class="classs">
-  <div v-for="item in this.list" v-bind:key="item" @click='123'><a href="#"><img :src="imgUrl1"/><br/>{{item.attributes.classname}}</a></div>
+  <div v-for="item in this.list" v-bind:key="item" @click='123' class="ss"><a href="#"><img :src="imgUrl1"/><br/>{{item.attributes.classname}}</a></div>
 </div>
 </div>
 </div>
@@ -65,9 +65,14 @@ background-color: aquamarine;
 height:595px;
 }
 .classs img{
-  width:120px
+  width:150px
 }
 .classs{
   display: flex;
+  margin-left: 100px;
+}
+.ss{
+  text-align: center;
+  margin-left: 100px;
 }
 </style>
