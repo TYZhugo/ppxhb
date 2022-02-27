@@ -19,6 +19,9 @@ export default {
   },
   components: {
   },
+  mounted:function(){
+    this.show();
+  },
   methods:{
     show(){
       const AV = require('leancloud-storage');
