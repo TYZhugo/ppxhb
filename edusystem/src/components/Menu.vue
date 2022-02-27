@@ -1,10 +1,12 @@
 <template>
 <div class='qqq'>
   <div class='ppp'>
-    <div class='picture'></div>
+    <div class='picture'>
+      <img :src="imgUrl"/>
+    </div>
     <ul class="menu">
-      <li><router-link to="/Exam" >我的班级</router-link></li>
-      <li><router-link to="">创建试卷</router-link></li>
+      <li><router-link to="/" >我的班级</router-link></li>
+      <li><router-link to="/Exam">创建试卷</router-link></li>
       <li><router-link to="">成绩管理</router-link></li>
       <li><router-link to="">考试发布</router-link></li>
       <li><router-link to="">实时监控</router-link></li>
@@ -17,15 +19,21 @@
 
 <script>
 export default {
-
+  name:'Menu',
+  data(){
+    return{
+      imgUrl:require("../assets/head.png")
+    }
+  }
 }
 </script>
 
 <style>
-.picture{
+.ppp .picture{
   width: 300px;
   height:180px;
-  background-color: white;
+  background-color: rgb(211, 209, 209);
+  text-align: center;
 }
 .qqq{
   width:300px;

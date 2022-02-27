@@ -2,7 +2,7 @@
   <div class='header'>
       <h1 class='system'>教师端</h1>
       <div>
-
+          <img :src="imgUrl" id="picture"/>
         <Dropdown title="个人中心" :items="serves" class="dropdown"/>
       </div>
   </div>
@@ -20,7 +20,7 @@ export default {
             serves:[
                 {
                     title:'切换账号',
-                    link:'./Login.vue'
+                    link:'./Login.vue',
                 },
                 {
                     title:'版本更新',
@@ -41,6 +41,10 @@ export default {
 </script>
 
 <style>
+#picture{
+    float: right;
+    width:50px;
+}
 .header{
     background-color:deepskyblue;
     width: 100%;
