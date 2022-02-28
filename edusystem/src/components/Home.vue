@@ -61,7 +61,7 @@ export default {
 
 .menu{
 width:300px;
-background-color: aquamarine;
+background-color: white;
 height:595px;
 }
 .classs img{
