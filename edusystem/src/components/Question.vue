@@ -2,6 +2,7 @@
 <div>
   <Header></Header>
   <Menu></Menu>
+  
 </div>
 </template>
 

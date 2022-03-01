@@ -5,9 +5,14 @@
 <div class='menu'>
   <Menu></Menu>
 </div>
+<el-card class="box-card">
 <div class="classs">
   <div v-for="item in this.list" v-bind:key="item" @click='123' class="ss"><a href="#"><img :src="imgUrl1"/><br/>{{item.attributes.classname}}</a></div>
 </div>
+<el-affix position="bottom" :offset="20">
+<el-button type="primary" round class="ww"><svg class="icon" width="17px" height="17px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-042ca774=""><path fill="currentColor" d="M480 480V128a32 32 0 0164 0v352h352a32 32 0 110 64H544v352a32 32 0 11-64 0V544H128a32 32 0 010-64h352z"></path></svg>添加班级</el-button>
+</el-affix>
+</el-card>
 </div>
 </div>
 </template>
@@ -55,6 +60,12 @@ export default {
 </script>
 
 <style>
+.box-card{
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  height: 730px;
+}
 .main{
   display: flex;
 }
@@ -69,10 +80,12 @@ height:595px;
 }
 .classs{
   display: flex;
-  margin-left: 100px;
+  flex-wrap: wrap;
+  width:800px;
+  height: 670px;
 }
 .ss{
   text-align: center;
-  margin-left: 100px;
+  margin-left: 50px;
 }
 </style>

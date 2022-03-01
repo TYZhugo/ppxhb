@@ -6,6 +6,7 @@ import Exam from './components/Exam.vue'
 import Question from './components/Question.vue'
 import Manage from './components/Manage.vue'
 import Grades from './components/Grades.vue'
+import Build from './components/Build.vue'
 
 const routers=createRouter({
     history:createWebHashHistory(),
@@ -34,6 +35,10 @@ const routers=createRouter({
         {
             path:'/Grades',
             component:Grades
+        },
+        {
+            path:'/Build',
+            component:Build
         }
     ]
 

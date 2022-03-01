@@ -5,9 +5,11 @@
   <div class="main">
   <Menu></Menu>
   <br/>
-  <div class="grades">
-  <div v-for="item in this.list" v-bind:key="item" @click='123' class="one"><a href="#"><img :src="imgUrl1"/><br/>{{item.attributes.classname}}</a></div>
+  <el-card class="box-card">
+<div class="grades">
+  <div v-for="item in this.list" v-bind:key="item" @click='123' class="ss"><a href="#"><img :src="imgUrl1"/><br/>{{item.attributes.classname}}</a></div>
 </div>
+</el-card>
   </div>
 </div>
 </template>
@@ -52,17 +54,8 @@ export default {
     width:150px;
     transition:width 2s ;
 }
-.one{
-    text-align: center;
-    margin-left: 100px;
-    transition:width 2s linear 2s;
-}
-.one :hover{
-    width:300px;
-}
 .grades{
     display: flex;
-    margin-left: 100px;
 }
 
 </style>

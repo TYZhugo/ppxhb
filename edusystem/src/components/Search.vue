@@ -2,7 +2,7 @@
 <div class="container">
 <form action="" class="parent">
 <input type="text" class="search" placeholder="搜索">
-<input type="button" name="" id="" class="btn">
+<input type="button" name="" id="" class="btn"><el-icon><search /></el-icon>
 </form>
 </div>
 </template>
