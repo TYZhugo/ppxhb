@@ -1,17 +1,17 @@
 <template>
   <div >
-      <div class='header'>
-      <h1 class='system'>教师端</h1>
-     </div>
      <div class="head">
-         <img :src="imgUrl" class="picture"/>
       <div class="login">
-        <input type="text"  placeholder="用户名(工号)" v-model="username"/>
-        <br/>
-        <input type="password"  placeholder="密码" v-model="password"/>
-        <br/>
+            <div class="LoginContent">
+            <h2>教师登录</h2>
+            <input type="text"  placeholder="用户名(工号)" v-model="username"/>
+            <br/>
+            <input type="password"  placeholder="密码" v-model="password"/>
+            <br/>
+            <el-button type="primary" round class="LoginButton" @click="login">登录</el-button>
+            </div>
       </div>
-      <button @click="login">登录</button>
+      
      </div>
   </div>
 </template>
@@ -24,7 +24,6 @@ export default {
     },
     data(){
         return{
-            imgUrl:require('../assets/780.jpg')
         }
     },
     methods:{
@@ -48,8 +47,11 @@ export default {
 
 <style>
 .login{
-    text-align: center;
-    line-height: 230px;
+    line-height: 130px;
+    margin: 150px 100px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 2px 1.5px 2px 1px gray;
 }
 .header{
     background-color:deepskyblue;
@@ -63,20 +65,26 @@ export default {
 }
 .login input{
     width:320px;
-    height: 50px;
+    height: 40px;
+    border-radius: 25px;
+    outline: none;
+    border: 1px solid gray;
 }
- button{
-    width:100px;
-    height: 30px;
-    border-radius: 10px;
+.login h2{
+    font-family: "宋体";
+}
+input :focus{
+
 }
 button :focus{
     outline: none;
 }
 .head{
-    text-align: center;
 }
-.head .picture{
-    width:180px;
+.LoginButton{
+    width: 320px;
+}
+.LoginContent{
+    margin-left: 50px;
 }
 </style>
