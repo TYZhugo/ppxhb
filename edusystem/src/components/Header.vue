@@ -48,30 +48,32 @@ export default {
     float: right;
     width:50px;
     margin-right: 60px;
-    margin-top: 80px;
+    margin-left: 60px;
     color: white;
     font-family: '宋体';
 }
 .header{
-    background-color:deepskyblue;
     width: 680px;
     height:140px;
     border-radius: 15px 15px 0 0;
     display: flex;
+    background-color: white;
 }
 .system{
     color:white;
     font-family: "宋体";
-    padding-block-start: 23px;
     width: 980px;
+    margin-left: 20px;
+    color: deepskyblue;
 }
 .dropdown{
     float:right;
-    margin-top: 50px;
+
 }
 .headers{
     display:flex;
     align-items: center;
     justify-content: flex-end;
 }
+
 </style>
