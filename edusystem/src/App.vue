@@ -21,10 +21,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top:0;
-  margin:0 250px;
+  margin:0 200px;
   border: 1px solid #000;
-  height:900px;
-  border-radius: 15px;
+  height:914px;
+  border-radius: 15px 15px 0 0;
+  background-color:  #dedfe0
 }
 
 </style>
