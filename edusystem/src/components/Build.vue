@@ -1,15 +1,15 @@
 <template>
   <div>
-      <Header/>
+      <Header></Header>
       <div class="main">
           <div class="menu">
-            <Menu/>
+            <Menu></Menu>
           </div>
           <el-card class="box-card">
               <div class="b-button">
-                  <el-button type="primary" plain round="ture" class="b-ebutton" @click="dialogVisible = true">1、考试信息</el-button>
-                  <el-button type="primary" plain round="ture" class="b-ebutton">2、设计试卷</el-button>
-                  <el-button type="primary" plain round="ture" class="b-ebutton">3、发布试卷</el-button>
+                  <button  class="b-ebutton" @click="dialogVisible = true">1、考试信息</button>
+                  <button  class="b-ebutton">2、设计试卷</button>
+                  <button class="b-ebutton">3、发布试卷</button>
               </div>
               <h2>基本信息</h2>
               <div>
@@ -58,13 +58,22 @@ export default {
 
 <style>
 .b-button{
-    height:80px;
+    height:40px;
     display: flex;
     justify-content: center;
     width: 800px;
 }
 .b-ebutton{
-    margin: 0 100px;
+    width: 200px;
+    margin: 0 30px;
+    border-radius: 20px;
+    border: none;
+    color: darkgray;
+}
+.b-ebutton:hover{
+    background-color: darkgray;
+    color: black;
+    cursor: pointer;
 }
 .main h2{
     font-family: "宋体";

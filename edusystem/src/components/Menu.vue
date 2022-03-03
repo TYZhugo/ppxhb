@@ -7,7 +7,7 @@
   <hr/>
   <el-menu
     default-active="2"
-    background-color="#909399"
+    background-color="rgb(98, 0, 128)"
     class="el-menu-vertical-demo"
     :collapse="isCollapse"
     @open="handleOpen"
@@ -25,10 +25,10 @@
     <el-menu-item index="/Question">
       <template #title ><div class="tupian"><img :src="imgUrl2"></div>我的题库</template>
     </el-menu-item>
-    <el-menu-item index="/">
+    <el-menu-item index="/Manage">
       <template #title ><div class="tupian"><img :src="imgUrl2"></div>实时监控</template>
     </el-menu-item>
-    <el-menu-item index="/Manage">
+    <el-menu-item index="/">
       <template #title><div class="tupian"><img :src="imgUrl6"></div>考试发布</template>
     </el-menu-item>
     <el-menu-item index="Build">
@@ -62,7 +62,7 @@ export default {
   width:300px;
   height: 760px;
   text-align: center;
-  background-color: #909399;
+  background-color: rgb(98, 0, 128);
 
 }
 .ppp{
@@ -72,8 +72,11 @@ export default {
   justify-content: center;
   align-items: center;
 }
+.ppp h2{
+    color: white;
+}
 .ppp img{
-  width:120px
+  width:90px
 }
 .tupian{
   display: flex;

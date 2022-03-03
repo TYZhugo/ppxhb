@@ -1,14 +1,14 @@
 <template>
-  <div class='header'>
+    <div class="heads">
       <h1 class='system'>教师端</h1>
       <div class="headers">
           <div id="picture">
-          <img :src="imgUrl" />
+          <img :src="imgUrl" class="img1"/>
           <h2 >客服</h2>
           </div>
         <Dropdown  class="dropdown"/>
       </div>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -19,61 +19,41 @@ export default {
     },
     data(){
         return {
-            imgUrl:require("../assets/kefu.png"),
-            serves:[
-                {
-                    title:'切换账号',
-                    link:'./Login.vue',
-                },
-                {
-                    title:'版本更新',
-                    link:'#'
-                },
-                {
-                    title:'个人设置',
-                    link:'#'
-                },
-                {
-                    title:'退出登录',
-                    link:'#'
-                }
-            ]
+            imgUrl:require("../assets/kefu.png")
         }
     }
 }
 </script>
 
 <style>
-#picture{
-    float: right;
-    width:50px;
-    margin-right: 60px;
-    margin-left: 60px;
-    color: white;
-    font-family: '宋体';
-}
-.header{
-    width: 680px;
-    height:140px;
-    border-radius: 15px 15px 0 0;
+.heads{
     display: flex;
+    width: 100%;
+    height: 140px;
     background-color: white;
-}
-.system{
-    color:white;
-    font-family: "宋体";
-    width: 980px;
-    margin-left: 20px;
-    color: deepskyblue;
-}
-.dropdown{
-    float:right;
 
 }
 .headers{
-    display:flex;
-    align-items: center;
+    display: flex;
+    font-family: "宋体";
+    width:80%;
     justify-content: flex-end;
+    margin-left: 100px;
 }
-
+.system{
+    color:rgb(98, 0, 128) ;
+    font-family: "宋体";
+}
+#picture{
+    margin-right: 40px;
+    border-right: 1px solid gray;
+    height: 90px;
+    margin-top: 40px;
+}
+.dropdown{
+    margin-top: 50px;
+}
+.img1{
+    margin-right: 30px;
+}
 </style>
