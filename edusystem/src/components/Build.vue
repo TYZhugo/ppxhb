@@ -11,28 +11,13 @@
                   <button  class="b-ebutton">2、设计试卷</button>
                   <button class="b-ebutton">3、发布试卷</button>
               </div>
-              <h2>基本信息</h2>
-              <div>
+              <div v-if="dialogVisible">
+                  <h2>基本信息</h2>
                   <p>考试名称：</p>
                   <el-input v-model="input1" />
                   <p>考生须知：</p>
+                  <input>
               </div>
-              <el-dialog
-                v-model="dialogVisible"
-                title="Tips"
-                width="30%"
-                :before-close="handleClose"
-                >
-                    <span>This is a message</span>
-                    <template #footer>
-                    <span class="dialog-footer">
-                    <el-button @click="dialogVisible = false">Cancel</el-button>
-                    <el-button type="primary" @click="dialogVisible = false"
-                        >Confirm</el-button
-        >
-                    </span>
-                    </template>
-                </el-dialog>
           </el-card>
       </div>
   </div>
@@ -77,5 +62,10 @@ export default {
 }
 .main h2{
     font-family: "宋体";
+}
+template{
+    width: 800px;
+    height: 450px;
+    border: 1px solid gray;
 }
 </style>
