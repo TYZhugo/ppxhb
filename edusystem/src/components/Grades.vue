@@ -5,11 +5,9 @@
   <div class="main">
   <Menu></Menu>
   <br/>
-  <el-card class="box-card">
-<div class="grades">
-  <div v-for="item in this.list" v-bind:key="item" @click='123' class="ss"><a href="#"><img :src="imgUrl1"/><br/>{{item.attributes.classname}}</a></div>
+<div class="classs">
+   <div v-for="item in this.list" v-bind:key="item" @click='123' class="ss"><div class="homeImg"><img :src="imgUrl1"></div>{{item.attributes.classname}}</div>
 </div>
-</el-card>
   </div>
 </div>
 </template>
@@ -21,7 +19,7 @@ export default {
     name:'Grades',
     data(){
         return{
-            imgUrl1:require('../assets/R-C (2).jpg'),
+            imgUrl1:require('../assets/classpicture.png'),
             list:{}
         }
     },

@@ -89,6 +89,7 @@ height:760px;
   margin-top: 50px;
   width: 225px;
   border-radius: 10px;
+  border: 0.5px solid gray;
 }
 .homeImg{
   display: flex;
@@ -98,5 +99,6 @@ height:760px;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 </style>

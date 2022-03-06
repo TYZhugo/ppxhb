@@ -66,13 +66,16 @@ export default {
 button :focus{
     outline: none;
 }
-
+button:hover{
+    cursor: pointer;
+}
 .LoginButton{
     width: 320px;
     height: 40px;
     background-color: rgb(98, 0, 128);
     color: white;
     border-radius: 20px;
+    border: none;
 }
 .LoginContent{
     margin-left: 50px;

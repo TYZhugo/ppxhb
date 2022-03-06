@@ -72,7 +72,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.ppp h2{
+.qqq h2{
     color: white;
 }
 .ppp img{
