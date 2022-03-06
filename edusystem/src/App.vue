@@ -24,7 +24,7 @@ export default {
   margin:0 200px;
   border: 1px solid #000;
   height:914px;
-  background-color:  #dedfe0
+  background-color:  #d4dce4
 }
 
 </style>
