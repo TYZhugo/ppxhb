@@ -28,7 +28,7 @@
     <el-menu-item index="/Manage">
       <template #title ><div class="tupian"><img :src="imgUrl2"></div>实时监控</template>
     </el-menu-item>
-    <el-menu-item index="/">
+    <el-menu-item index="/Exam">
       <template #title><div class="tupian"><img :src="imgUrl6"></div>考试发布</template>
     </el-menu-item>
     <el-menu-item index="Build">
