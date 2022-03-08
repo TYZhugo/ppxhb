@@ -34,7 +34,7 @@
     <el-menu-item index="Build">
       <template #title><div class="tupian"><img :src="imgUrl7"></div>创建试卷</template>
     </el-menu-item>
-    <el-menu-item index="/">
+    <el-menu-item index="/Manage">
       <template #title><div class="tupian"><img :src="imgUrl2"></div>批改卷子</template>
     </el-menu-item>
   </el-menu>
