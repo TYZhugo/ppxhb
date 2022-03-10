@@ -1,10 +1,6 @@
 <template>
   <div>
-      <Header></Header>
       <div class="main">
-          <div class="menu">
-            <Menu></Menu>
-          </div>
           <div class="buildFace">
               <div class="b-button">
                   <button  class="b-ebutton" @click="change1">1、考试信息</button>
@@ -65,8 +61,7 @@
 </template>
 
 <script>
-import Header from './Header.vue'
-import Menu from './Menu.vue'
+
 export default {
     name:'Build',
     data(){
@@ -98,8 +93,6 @@ export default {
         }
     },
     components:{
-        Header,
-        Menu
     },
     methods:{
         change1(){

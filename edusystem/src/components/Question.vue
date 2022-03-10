@@ -1,8 +1,6 @@
 <template>
 <div>
-  <Header></Header>
   <div class="main">
-  <Menu></Menu>
   <div class="questionMain">
   <div class="questionCard">
     <div class="questionName">
@@ -25,13 +23,9 @@
 </template>
 
 <script>
-import Header from './Header.vue'
-import Menu from './Menu.vue'
 export default {
     name:'Question',
     components:{
-        Header,
-        Menu
     },
     data(){
       return{

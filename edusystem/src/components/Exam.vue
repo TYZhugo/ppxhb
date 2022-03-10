@@ -1,8 +1,6 @@
 <template>
   <div>
-    <Header></Header>
     <div class="main">
-    <Menu></Menu>
     <div>
       <div class="examButton">
       <button @click="onechange">已发布</button>
@@ -24,13 +22,9 @@
 </template>
 
 <script>
-import Header from './Header.vue'
-import Menu from './Menu.vue'
 export default {
   name:'Exam',
   components:{
-    Header,
-    Menu
   },
   data(){
     return{

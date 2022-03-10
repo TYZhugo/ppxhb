@@ -1,10 +1,7 @@
 <template>
   <div>
-  <Header></Header>
   
   <div class="main">
-  <Menu></Menu>
-  <br/>
 <div class="classs">
    <div v-for="item in this.list" v-bind:key="item" @click='123' class="ss"><div class="homeImg"><img :src="imgUrl1"></div>{{item.attributes.classname}}</div>
 </div>
@@ -13,8 +10,6 @@
 </template>
 
 <script>
-import Header from './Header.vue'
-import Menu from './Menu.vue'
 export default {
     name:'Grades',
     data(){
@@ -24,8 +19,6 @@ export default {
         }
     },
     components:{
-        Header,
-        Menu,
     },
     created:function(){
 

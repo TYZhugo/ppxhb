@@ -45,7 +45,7 @@ const routers=createRouter({
 });
 routers.beforeResolve((to,from,next)=>{
     let logined=store.state.islogin;
-    if(to.name=='login'||to.path==='/Register'){
+    if(to.name=='login'){
         if(!logined){
             next();
         }else{

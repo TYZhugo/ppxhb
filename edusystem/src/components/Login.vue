@@ -1,6 +1,5 @@
 <template>
   <div >
-     <div class="head">
       <div class="login">
             <div class="LoginContent">
             <h2>教师登录</h2>
@@ -10,7 +9,6 @@
             <br/>
             <button class="LoginButton" @click="login">登录</button>
             </div>
-      </div>
       
      </div>
   </div>
@@ -47,6 +45,7 @@ export default {
 
 <style>
 .login{
+    width: 700px;
     line-height: 130px;
     margin: 150px 100px;
     background-color: white;

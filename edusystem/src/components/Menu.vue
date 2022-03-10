@@ -1,12 +1,12 @@
 <template>
-<div class='qqq'>
+<div class='qqq' v-if="this.$store.state.islogin">
   <div class="ppp">
   <img :src="imgUrl1"/>
   </div>
   <h2>123</h2>
   <hr/>
   <el-menu
-    default-active="2"
+    default-active="/"
     background-color="rgb(98, 0, 128)"
     class="el-menu-vertical-demo"
     :collapse="isCollapse"
@@ -14,27 +14,27 @@
     @close="handleClose"
     router='ture'
     text-color="white"
-    active-text-color="#303133"
+    active-text-color="white"
   >
-    <el-menu-item index="/">
+    <el-menu-item index="/" class="menuCard">
       <template #title ><div class="tupian"><img :src="imgUrl2"></div>我的班级</template>
     </el-menu-item>
-    <el-menu-item index="/Grades">
+    <el-menu-item index="/Grades" class="menuCard">
       <template #title ><div class="tupian"><img :src="imgUrl3"></div>成绩管理</template>
     </el-menu-item>
-    <el-menu-item index="/Question">
+    <el-menu-item index="/Question" class="menuCard">
       <template #title ><div class="tupian"><img :src="imgUrl2"></div>我的题库</template>
     </el-menu-item>
-    <el-menu-item index="/Manage">
+    <el-menu-item index="/Manage" class="menuCard">
       <template #title ><div class="tupian"><img :src="imgUrl2"></div>实时监控</template>
     </el-menu-item>
-    <el-menu-item index="/Exam">
+    <el-menu-item index="/Exam" class="menuCard">
       <template #title><div class="tupian"><img :src="imgUrl6"></div>考试发布</template>
     </el-menu-item>
-    <el-menu-item index="Build">
+    <el-menu-item index="Build" class="menuCard">
       <template #title><div class="tupian"><img :src="imgUrl7"></div>创建试卷</template>
     </el-menu-item>
-    <el-menu-item index="/Manage">
+    <el-menu-item index="/Manage" class="menuCard">
       <template #title><div class="tupian"><img :src="imgUrl2"></div>批改卷子</template>
     </el-menu-item>
   </el-menu>
@@ -97,5 +97,9 @@ export default {
   align-content: center;
   width: 250px;
   color: white;
+}
+.el-menu-item.is-active.menuCard{
+  background-color: rgb(82, 6, 105) !important;
+  border-left: 4px solid sandybrown;
 }
 </style>

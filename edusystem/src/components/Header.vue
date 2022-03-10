@@ -1,5 +1,5 @@
 <template>
-    <div class="heads">
+    <div class="heads" v-if="this.$store.state.islogin">
       <h1 class='system'>教师端</h1>
       <div class="headers">
           <div id="picture">
