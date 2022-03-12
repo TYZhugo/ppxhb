@@ -25,7 +25,7 @@
     <el-menu-item index="/Question" class="menuCard">
       <template #title ><div class="tupian"><img :src="imgUrl2"></div>我的题库</template>
     </el-menu-item>
-    <el-menu-item index="/Manage" class="menuCard">
+    <el-menu-item index="/Jiankong" class="menuCard">
       <template #title ><div class="tupian"><img :src="imgUrl2"></div>实时监控</template>
     </el-menu-item>
     <el-menu-item index="/Exam" class="menuCard">

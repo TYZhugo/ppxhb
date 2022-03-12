@@ -62,7 +62,7 @@ export default {
 .login h2{
     font-family: "宋体";
 }
-button :focus{
+button:focus{
     outline: none;
 }
 button:hover{
