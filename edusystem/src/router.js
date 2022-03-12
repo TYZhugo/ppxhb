@@ -7,6 +7,7 @@ import Question from './components/Question.vue'
 import Manage from './components/Manage.vue'
 import Grades from './components/Grades.vue'
 import Build from './components/Build.vue'
+import Jiankong from './components/Jiankong.vue'
 
 const routers=createRouter({
     history:createWebHashHistory(),
@@ -39,6 +40,10 @@ const routers=createRouter({
         {
             path:'/Build',
             component:Build
+        },
+        {
+            path:'/Jiankong',
+            component:Jiankong
         }
     ]
 
