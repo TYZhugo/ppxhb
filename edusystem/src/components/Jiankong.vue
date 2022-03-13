@@ -4,9 +4,11 @@
             <option>大一一班</option>
             <option>大一二班</option>
         </select>
-        <div  class="JKface">
-        <div v-for="i in 20" v-bind:key="i" class="JKcard"></div>
-        </div>
+        <el-scrollbar   height="750px">
+            <div class="JKface">
+        <div v-for="i in 30" v-bind:key="i" class="JKcard"></div>
+            </div>
+        </el-scrollbar>
   </div>
 </template>
 
@@ -20,6 +22,7 @@ export default {
 .JKface{
     display: flex;
     flex-wrap: wrap;
+    width: 800px;
 }
 .JKcard{
     width: 150px;
