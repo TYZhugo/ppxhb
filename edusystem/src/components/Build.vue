@@ -14,9 +14,9 @@
                   <p>考生须知：</p>
                   <textarea class="instructions"></textarea>
                   <br/>
-                  <button class="b-bbutton">保存&去设计试卷</button>
+                  <button class="b-bbutton" @click="change2">保存&去设计试卷</button>
               </div>
-              <div v-show="designVisible">
+              <div v-show="designVisible" class="Bcard2">
                   <h2>设计试卷</h2>
                   <p>考试模板：</p>
                   <select>
@@ -31,7 +31,7 @@
                       <option>手动组卷</option>
                   </select>
                   <br/>
-                  <button class="b-bbutton">保存&去发布试卷</button>
+                  <button class="b-bbutton" @click="change3">保存&去发布试卷</button>
               </div>
               <div v-show="releaseVisible">
                   <h2>发布试卷</h2>
@@ -43,7 +43,7 @@
                     </el-time-picker>
                 </div>
                   <p>考试班级：</p>
-                  <el-select v-model="value3" multiple placeholder="考试班级">
+                  <el-select v-model="value3" multiple placeholder="考试班级" class="ChooseClass">
                         <el-option
                         v-for="item in options"
                         :key="item.value"
@@ -166,5 +166,18 @@ export default {
 }
 .endTime{
     margin-left: 30px;
+}
+.Bcard2 select{
+    height: 40px;
+    width: 300px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+select:focus{
+    outline: none;
+}
+.ChooseClass{
+    width: 300px;
 }
 </style>
