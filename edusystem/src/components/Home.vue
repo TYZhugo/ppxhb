@@ -6,10 +6,24 @@
   <div v-for="item in this.list" v-bind:key="item" @click='123' class="ss"><div class="homeImg"><img :src="imgUrl1"></div>{{item.attributes.classname}}</div>
 </div>
 <el-affix position="bottom" :offset="20">
-<el-button type="primary" round class="ww"><svg class="icon" width="17px" height="17px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-042ca774=""><path fill="currentColor" d="M480 480V128a32 32 0 0164 0v352h352a32 32 0 110 64H544v352a32 32 0 11-64 0V544H128a32 32 0 010-64h352z"></path></svg>添加班级</el-button>
+<el-button type="primary" round class="ww" @click="dialogVisible=true"><svg class="icon" width="17px" height="17px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-042ca774=""><path fill="currentColor" d="M480 480V128a32 32 0 0164 0v352h352a32 32 0 110 64H544v352a32 32 0 11-64 0V544H128a32 32 0 010-64h352z"></path></svg>添加班级</el-button>
 </el-affix>
 </div>
 </div>
+<el-dialog
+    v-model="dialogVisible"
+    title="添加班级"
+    width="30%"
+    :before-close="handleClose"
+  >
+    <span>班级名：</span>
+    <template #footer>
+      <span class="dialog-footer">
+        <el-button @click="dialogVisible = false">取消</el-button>
+        <el-button  @click="dialogVisible = false" color="#626aef" plain>添加</el-button>
+      </span>
+    </template>
+  </el-dialog>
 </div>
 </template>
 
@@ -19,7 +33,8 @@ export default {
   data(){
     return{
       imgUrl1:require('../assets/classpicture.png'),
-      list:{}
+      list:{},
+      dialogVisible:false
     }
   },
   components: {
