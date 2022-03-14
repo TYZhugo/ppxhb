@@ -31,7 +31,7 @@
     <el-menu-item index="/Exam" class="menuCard">
       <template #title><div class="tupian"><img :src="imgUrl6"></div>考试发布</template>
     </el-menu-item>
-    <el-menu-item index="Build" class="menuCard">
+    <el-menu-item index="/Build" class="menuCard">
       <template #title><div class="tupian"><img :src="imgUrl7"></div>创建试卷</template>
     </el-menu-item>
     <el-menu-item index="/Manage" class="menuCard">

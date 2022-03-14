@@ -58,7 +58,9 @@ export default {
     
   },
   methods:{
-    
+    returnLogin(){
+        this.$router.push('/Login')
+      }
     
   }
   

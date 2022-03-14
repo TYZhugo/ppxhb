@@ -6,7 +6,7 @@
           <img :src="imgUrl" class="img1"/>
           <h2 >客服</h2>
           </div>
-        <Dropdown  class="dropdown"/>
+        <Dropdown  class="dropdown" v-on:click="$emit('click')"/>
       </div>
     </div>
 </template>
@@ -17,10 +17,16 @@ export default {
     components:{
         Dropdown
     },
+    emits:['click'],
     data(){
         return {
             imgUrl:require("../assets/kefu.png")
         }
+    },
+    methods:{
+        returnLogin(){
+        this.$router.push('/Login')
+      }
     }
 }
 </script>
