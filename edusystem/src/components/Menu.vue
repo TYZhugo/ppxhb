@@ -7,7 +7,7 @@
   <hr/>
   <el-menu
     default-active="/"
-    background-color="rgb(98, 0, 128)"
+    background-color="rgb(100, 45, 151)"
     class="el-menu-vertical-demo"
     :collapse="isCollapse"
     @open="handleOpen"
@@ -23,10 +23,10 @@
       <template #title ><div class="tupian"><img :src="imgUrl3"></div>成绩管理</template>
     </el-menu-item>
     <el-menu-item index="/Question" class="menuCard">
-      <template #title ><div class="tupian"><img :src="imgUrl2"></div>我的题库</template>
+      <template #title ><div class="tupian"><img :src="imgUrl4"></div>我的题库</template>
     </el-menu-item>
     <el-menu-item index="/Jiankong" class="menuCard">
-      <template #title ><div class="tupian"><img :src="imgUrl2"></div>实时监控</template>
+      <template #title ><div class="tupian"><img :src="imgUrl5"></div>实时监控</template>
     </el-menu-item>
     <el-menu-item index="/Exam" class="menuCard">
       <template #title><div class="tupian"><img :src="imgUrl6"></div>考试发布</template>
@@ -35,7 +35,7 @@
       <template #title><div class="tupian"><img :src="imgUrl7"></div>创建试卷</template>
     </el-menu-item>
     <el-menu-item index="/Manage" class="menuCard">
-      <template #title><div class="tupian"><img :src="imgUrl2"></div>批改卷子</template>
+      <template #title><div class="tupian"><img :src="imgUrl8"></div>批改卷子</template>
     </el-menu-item>
   </el-menu>
 </div>
@@ -49,8 +49,11 @@ export default {
       imgUrl1:require("../assets/touxiang.png"),
       imgUrl2:require("../assets/banji.png"),
       imgUrl3:require("../assets/guanli.png"),
+      imgUrl4:require("../assets/question.png"),
+      imgUrl5:require("../assets/manager.png"),
       imgUrl6:require("../assets/fabu.png"),
-      imgUrl7:require("../assets/chuangjian.png")
+      imgUrl7:require("../assets/chuangjian.png"),
+      imgUrl8:require("../assets/pigai.png")
       
     }
   }
@@ -62,7 +65,7 @@ export default {
   width:300px;
   height: 760px;
   text-align: center;
-  background-color: rgb(98, 0, 128);
+  background-color: rgb(100, 45, 151);
 
 }
 .ppp{
@@ -99,7 +102,7 @@ export default {
   color: white;
 }
 .el-menu-item.is-active.menuCard{
-  background-color: rgb(82, 6, 105) !important;
+  background-color: rgb(80, 6, 129) !important;
   border-left: 4px solid sandybrown;
 }
 </style>
