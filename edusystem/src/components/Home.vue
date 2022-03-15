@@ -16,7 +16,11 @@
     width="30%"
     :before-close="handleClose"
   >
-    <span>班级名：</span>
+    <span>班级名称：</span>
+    <input>
+    <br/>
+    <span>班级人数：</span>
+    <input type="number">
     <template #footer>
       <span class="dialog-footer">
         <el-button @click="dialogVisible = false">取消</el-button>

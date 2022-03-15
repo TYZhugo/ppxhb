@@ -1,6 +1,11 @@
 <template>
   <div >
-      <div class="login">
+      <div v-show="islogin" class="loginChoose">
+          <button class="logbutton" @click="teacher">教师端</button>
+          <br/>
+          <button class="logbutton" @click="student">学生端</button>
+      </div>
+      <div class="login" v-show="isteacher">
             <div class="LoginContent">
             <h2>教师登录</h2>
             <input type="text"  placeholder="用户名(工号)" v-model="username"/>
@@ -8,8 +13,17 @@
             <input type="password"  placeholder="密码" v-model="password"/>
             <br/>
             <button class="LoginButton" @click="login">登录</button>
+           </div>
+      </div>
+        <div class="login" v-show="isstudent">
+            <div class="LoginContent">
+            <h2>学生登录</h2>
+            <input type="text"  placeholder="用户名(学号)" v-model="username"/>
+            <br/>
+            <input type="password"  placeholder="密码" v-model="password"/>
+            <br/>
+            <button class="LoginButton" @click="login">登录</button>
             </div>
-      
      </div>
   </div>
 </template>
@@ -22,6 +36,11 @@ export default {
     },
     data(){
         return{
+            isstudent:false,
+            isteacher:false,
+            islogin:true,
+            username:'',
+            password:''
         }
     },
     methods:{
@@ -37,6 +56,14 @@ export default {
                 alert('用户名或密码错误')
             }
             
+        },
+        teacher(){
+            this.isteacher=true
+            this.islogin=false
+        },
+        student(){
+            this.isstudent=true
+            this.islogin=false
         }
     }
     
@@ -78,5 +105,22 @@ button:hover{
 }
 .LoginContent{
     margin-left: 50px;
+}
+.loginChoose{
+    text-align: center;
+    width: 700px;
+    margin: 35% 35%;
+    background-color: white;
+}
+.loginChoose button{
+    width: 300px;
+    height: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    border: none;
+}
+.loginChoose button:hover{
+    background-color: rgb(161, 159, 159);
 }
 </style>
