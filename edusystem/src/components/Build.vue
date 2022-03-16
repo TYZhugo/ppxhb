@@ -39,7 +39,7 @@
                       <p>考试时间：</p>
                     <el-time-picker v-model="value1" placeholder="开始时间" class="startTime">
                     </el-time-picker>
-                    <el-time-picker v-model="value2" arrow-control placeholder="结束时间" class="endTime">
+                    <el-time-picker v-model="value2" placeholder="结束时间" class="endTime">
                     </el-time-picker>
                 </div>
                   <p>考试班级：</p>
@@ -53,7 +53,7 @@
                         </el-option>
                     </el-select>
                     <br/>
-                  <button class="b-bbutton">发布</button>
+                  <button class="b-bbutton" @click="fabu">发布</button>
               </div>
               </div>
       </div>
@@ -69,6 +69,7 @@ export default {
             informationVisible:true,
             designVisible:false,
             releaseVisible:false,
+            input1:'',
             value1:'',
             value2:'',
             value3:[],
@@ -101,14 +102,42 @@ export default {
             this.releaseVisible=false
         },
         change2(){
+             if(this.input1==''){
+                alert("考试名称不能为空！！！")
+            }else{
             this.informationVisible=false,
             this.designVisible=true,
             this.releaseVisible=false
+            }
         },
         change3(){
             this.informationVisible=false,
             this.designVisible=false,
             this.releaseVisible=true
+        },
+        fabu(){
+            if(this.value1==''||this.value2==''){
+                alert("未选择考试起止时间！")
+            }else{
+                if(this.value3==''){
+                    alert("未选择考试班级！")
+                }else{
+                    const AV = require('leancloud-storage');
+                    AV.init({
+                        appId: "pTtwtgVghMG7r3ReP8EkNEEI-gzGzoHsz",
+                        appKey: "vky0hDUeQiaK50ay78CsgMBz",
+                        serverURL: "https://pttwtgvg.lc-cn-n1-shared.com"
+                    });
+                    const exam=AV.Object.extend('exam');
+                    const nexam= new exam();
+                    nexam.set('examName',this.input1);
+                    nexam.set('begintime',this.value1);
+                    nexam.set('endtime',this.value2);
+                    nexam.save().then(function(){
+                        console.log('保存成功')
+                    })
+                }
+            }
         }
     }
 

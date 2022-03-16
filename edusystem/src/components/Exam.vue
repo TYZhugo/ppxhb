@@ -8,13 +8,13 @@
       <button @click="threechange">待批改</button>
       </div>
       <div v-if="oneVisible" class="examFace">
-        <div v-for="i in 6" v-bind:key="i" class="box1"><img :src="imgUrl1"><div class="examText"><p>大学物理</p><p>2021.1.30 8: 00--10:00</p></div><div class="examDelt">&times;</div></div>
+        <div v-for="item in this.list" v-bind:key="item" class="box1"><img :src="imgUrl1"><div class="examText"><p>{{item.attributes.examName}}</p><p>2021.1.30 8: 00--10:00</p></div><div class="examDelt" @click="deltt(item.id)">&times;</div></div>
       </div>
       <div v-if="twoVisible" class="examFace">
-        <div v-for="i in 6" v-bind:key="i" class="box1"><img :src="imgUrl1"><div class="examText"><p>大学物理</p><p>2021.1.30 8: 00--10:00</p></div><div class="examDelt">&times;</div></div>
+        <div v-for="i in 6" v-bind:key="i" class="box1"><img :src="imgUrl1"><div class="examText"><p>大学物理</p><p>2021.1.30 8: 00--10:00</p></div><div class="examDelt" @click="deltt(key)">&times;</div></div>
       </div>
       <div v-if="threeVisible" class="examFace">
-        <div v-for="i in 6" v-bind:key="i" class="box1"><img :src="imgUrl1"><div class="examText"><p>大学物理</p><p>2021.1.30 8: 00--10:00</p><p class="qwee">未批改</p></div><div class="examDelt">&times;</div></div>
+        <div v-for="i in 6" v-bind:key="i" class="box1"><img :src="imgUrl1"><div class="examText"><p>大学物理</p><p>2021.1.30 8: 00--10:00</p><p class="qwee">未批改</p></div><div class="examDelt" @click="deltt(key)">&times;</div></div>
       </div>
     </div>
     </div>
@@ -31,7 +31,8 @@ export default {
       oneVisible:true,
       twoVisible:false,
       threeVisible:false,
-      imgUrl1:require("../assets/exampicture.png")
+      imgUrl1:require("../assets/exampicture.png"),
+      list:{}
     }
   },
   methods:{
@@ -49,7 +50,37 @@ export default {
       this.oneVisible=false,
       this.twoVisible=false,
       this.threeVisible=true
+    },
+    deltt(id){
+      const AV = require('leancloud-storage');
+      AV.init({
+          appId: "pTtwtgVghMG7r3ReP8EkNEEI-gzGzoHsz",
+          appKey: "vky0hDUeQiaK50ay78CsgMBz",
+          serverURL: "https://pttwtgvg.lc-cn-n1-shared.com"
+        });
+      const todo = AV.Object.createWithoutData('exam', id);
+       todo.destroy();
+      const examination =new AV.Query('exam');
+      examination.lessThan('id',300);
+      examination.find().then((examinations)=>{
+        this.list=examinations
+        console.log(examinations)
+      })
     }
+  },
+  created:function(){
+    const AV = require('leancloud-storage');
+      AV.init({
+          appId: "pTtwtgVghMG7r3ReP8EkNEEI-gzGzoHsz",
+          appKey: "vky0hDUeQiaK50ay78CsgMBz",
+          serverURL: "https://pttwtgvg.lc-cn-n1-shared.com"
+        });
+      const examination =new AV.Query('exam');
+      examination.lessThan('id',300);
+      examination.find().then((examinations)=>{
+        this.list=examinations
+        console.log(examinations)
+      })
   }
 }
 </script>
