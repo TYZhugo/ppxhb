@@ -1,6 +1,7 @@
 <template>
   <div >
       <div v-show="islogin" class="loginChoose">
+          <h2>请选择：</h2>
           <button class="logbutton" @click="teacher">教师端</button>
           <br/>
           <button class="logbutton" @click="student">学生端</button>
@@ -111,6 +112,7 @@ button:hover{
     width: 700px;
     margin: 35% 35%;
     background-color: white;
+    border-radius: 5px;
 }
 .loginChoose button{
     width: 300px;
@@ -122,5 +124,10 @@ button:hover{
 }
 .loginChoose button:hover{
     background-color: rgb(161, 159, 159);
+}
+.loginChoose h2{
+    position: relative;
+    left: -30%;
+    top: 10px;
 }
 </style>
