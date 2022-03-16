@@ -19,6 +19,9 @@ const store=createStore({
         },
         newBuiltUser(state,user){
             state.Users.push(user)
+        },
+        loginChange(state){
+            state.islogin=false;
         }
     },
     actions:{
