@@ -1,10 +1,10 @@
 <template>
-  <div >
+  <div v-show="!$store.state.islogin">
       <div v-show="islogin" class="loginChoose">
-          <h2>请选择：</h2>
-          <button class="logbutton" @click="teacher">教师端</button>
+          <h2>请选择您的身份：</h2>
+          <button class="logbutton" @click="teacher">我是教师</button>
           <br/>
-          <button class="logbutton" @click="student">学生端</button>
+          <button class="logbutton" @click="student">我是学生</button>
       </div>
       <div class="login" v-show="isteacher">
             <div class="LoginContent">
