@@ -31,6 +31,7 @@ export default {
     methods:{
       returnLogin(){
         this.$store.commit('loginChange')
+        this.$router.push({path:'/Login'})
       }
     }
 }
