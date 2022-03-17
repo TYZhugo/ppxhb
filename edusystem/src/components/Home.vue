@@ -3,7 +3,7 @@
 <div class='main'>
 <div>
 <div class="classs">
-  <div v-for="item in this.list" v-bind:key="item" @click='123' class="ss"><div class="homeImg"><img :src="imgUrl1"></div>{{item.attributes.classname}}</div>
+  <div v-for="item in this.list" v-bind:key="item" @click='123' class="ss" v-show="!dialogVisible"><div class="homeImg"><img :src="imgUrl1"></div>{{item.attributes.classname}}</div>
 </div>
 <el-affix position="bottom" :offset="20">
 <el-button type="primary" round class="ww" @click="dialogVisible=true"><svg class="icon" width="17px" height="17px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-042ca774=""><path fill="currentColor" d="M480 480V128a32 32 0 0164 0v352h352a32 32 0 110 64H544v352a32 32 0 11-64 0V544H128a32 32 0 010-64h352z"></path></svg>添加班级</el-button>
@@ -15,16 +15,18 @@
     title="添加班级"
     width="30%"
     :before-close="handleClose"
+    class="addface"
+    draggable
   >
     <span>班级名称：</span>
-    <input>
+    <input v-model="classname">
     <br/>
     <span>班级人数：</span>
-    <input type="number">
+    <input type="number" v-model="classnumber">
     <template #footer>
       <span class="dialog-footer">
         <el-button @click="dialogVisible = false">取消</el-button>
-        <el-button  @click="dialogVisible = false" color="#626aef" plain>添加</el-button>
+        <el-button  @click="addclass" color="#626aef" plain>添加</el-button>
       </span>
     </template>
   </el-dialog>
@@ -38,7 +40,9 @@ export default {
     return{
       imgUrl1:require('../assets/classpicture.png'),
       list:{},
-      dialogVisible:false
+      dialogVisible:false,
+      classname:'',
+      classnumber:''
     }
   },
   components: {
@@ -64,8 +68,28 @@ export default {
   methods:{
     returnLogin(){
         this.$router.push('/Login')
-      }
-    
+      },
+    addclass(){
+      this.dialogVisible = false
+      const AV = require('leancloud-storage');
+      AV.init({
+          appId: "pTtwtgVghMG7r3ReP8EkNEEI-gzGzoHsz",
+          appKey: "vky0hDUeQiaK50ay78CsgMBz",
+          serverURL: "https://pttwtgvg.lc-cn-n1-shared.com"
+        });
+        const newclass=new AV.Object.extend('class')
+        const nnclass=new newclass()
+        nnclass.set('classname',this.classname)
+        nnclass.save().then(function(){
+          console.log('保存成功')
+          })
+        const classlist =new AV.Query('class');
+        classlist.lessThan('id',300);
+        classlist.find().then((classlists)=>{
+        this.list=classlists
+        console.log(classlists)
+      })
+    }
   }
   
 }
@@ -113,5 +137,8 @@ height:760px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+.addface input{
+  margin-top: 40px;
 }
 </style>
