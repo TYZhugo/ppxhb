@@ -2,9 +2,9 @@
   <div v-show="!$store.state.islogin">
       <div v-show="islogin" class="loginChoose">
           <h2>请选择您的身份：</h2>
-          <button class="logbutton" @click="teacher">我是教师</button>
+          <button class="logbutton1" @click="teacher"><h2>我是教师</h2></button>
           <br/>
-          <button class="logbutton" @click="student">我是学生</button>
+          <button class="logbutton2" @click="student"><h2>我是学生</h2></button>
       </div>
       <div class="login" v-show="isteacher">
             <div class="LoginContent">
@@ -14,6 +14,9 @@
             <input type="password"  placeholder="密码" v-model="password"/>
             <br/>
             <button class="LoginButton" @click="login">登录</button>
+           </div>
+           <div class="erweima">
+            二维码区
            </div>
       </div>
         <div class="login" v-show="isstudent">
@@ -73,12 +76,13 @@ export default {
 
 <style>
 .login{
-    width: 700px;
+    width: 950px;
     line-height: 130px;
     margin: 150px 100px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 2px 1.5px 2px 1px gray;
+    display: flex;
 }
 .login input{
     width:320px;
@@ -122,12 +126,24 @@ button:hover{
     border-radius: 10px;
     border: none;
 }
-.loginChoose button:hover{
-    background-color: rgb(161, 159, 159);
-}
 .loginChoose h2{
     position: relative;
     left: -30%;
     top: 10px;
+}
+.erweima{
+    width: 350px;
+    height: 350px;
+    background-color: gray;
+    margin-top: 100px;
+    margin-left: 120px;
+    text-align: center;
+    border-radius: 3px;
+}
+.logbutton1{
+    background-color: rgb(241, 228, 253);
+}
+.logbutton2{
+    background-color: rgb(196, 205, 255);
 }
 </style>
