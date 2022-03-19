@@ -8,7 +8,18 @@
       <button @click="threechange">待批改</button>
       </div>
       <div v-if="oneVisible" class="examFace">
-        <div v-for="item in this.list" v-bind:key="item" class="box1"><img :src="imgUrl1"><div class="examText"><p>{{item.attributes.examName}}</p><p>2021.1.30 8: 00--10:00</p></div><div class="examDelt" @click="deltt(item.id)">&times;</div></div>
+        <div v-for="item in this.list" v-bind:key="item" class="box1"><img :src="imgUrl1"><div class="examText"><p>{{item.attributes.examName}}</p><p>2021.1.30 8: 00--10:00</p></div> <el-popconfirm
+        confirm-button-text="确定"
+        cancel-button-text="取消"
+        :icon="InfoFilled"
+        icon-color="red"
+        title="确定删除这次考试吗?"
+        @confirm="deltt(item.id)"
+        >
+    <template #reference>
+      <button class="examDelt" >&times;</button>
+    </template>
+  </el-popconfirm></div>
       </div>
       <div v-if="twoVisible" class="examFace">
         <div v-for="i in 6" v-bind:key="i" class="box1"><img :src="imgUrl1"><div class="examText"><p>大学物理</p><p>2021.1.30 8: 00--10:00</p></div><div class="examDelt" @click="deltt(key)">&times;</div></div>
@@ -134,6 +145,9 @@ export default {
   margin-top: 10px;
   width: 10px;
   height: 10px;
+  outline: none;
+  border: none;
+  background-color: white;
 }
 .examDelt:hover{
   cursor: pointer;
