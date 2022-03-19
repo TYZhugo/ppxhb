@@ -28,6 +28,9 @@
             <br/>
             <button class="LoginButton" @click="login">登录</button>
             </div>
+           <div class="erweima">
+            二维码区
+           </div>
      </div>
   </div>
 </template>
@@ -142,8 +145,18 @@ button:hover{
 }
 .logbutton1{
     background-color: rgb(241, 228, 253);
+    color: rgb(141, 41, 207);
+}
+.logbutton1:hover{
+    color: white;
+    background-color: rgb(157, 37, 238);
 }
 .logbutton2{
     background-color: rgb(196, 205, 255);
+    color: rgb(85, 85, 241);
+}
+.logbutton2:hover{
+    color: white;
+    background-color:rgb(85, 85, 241) ;
 }
 </style>
