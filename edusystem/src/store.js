@@ -7,7 +7,8 @@ const store=createStore({
             password:'123'
         }
         ],
-        islogin:false
+        islogin:false,
+        isteacher:true
         }
     },
     mutations:{
