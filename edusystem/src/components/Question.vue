@@ -3,20 +3,28 @@
   <div class="main">
   <div class="questionMain">
   <div class="questionCard">
-    <div class="questionName">
+    <div class="questionName" @click="showquestion">
     <img :src="imgUrl1">
     <p>大学物理</p>
     </div>
     <br/>
-    <p class="questionNumber">共计1010道题</p>
+    <p class="questionNumber">共计{{questionnumber}}道题</p>
   </div>
   <div class="questionBuild">
   <p>添加新题：</p>
-  <input placeholder="选择添加新题型">
+  <el-select v-model="value" multiple placeholder="选择题型" class="ChooseClass">
+    <el-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value"
+    >
+      </el-option>
+  </el-select>
   </div>
-  <textarea placeholder="请输入题目"></textarea>
+  <textarea placeholder="请输入题目" v-model="questionvalue"></textarea>
   <br/>
-  <button class="questionButton">添加</button>
+  <button class="questionButton" @click="addquestion">添加</button>
   </div>
   </div>
 </div>
@@ -29,11 +37,47 @@ export default {
     },
     data(){
       return{
-        imgUrl1:require("../assets/exampicture.png")
+        imgUrl1:require("../assets/exampicture.png"),
+        options : [
+                        {
+                            value: '选择题',
+                            label: '选择题',
+                        },
+                        {
+                            value: '填空题',
+                            label: '填空题',
+                        },
+                        {
+                            value: '判断题',
+                            label: '判断题',
+                        },
+                        {
+                            value: '简答题',
+                            label: '简答题',
+                        },
+                    ],
+        questionnumber:0,
+        questionvalue:'',
+        value:[]
       }
     },
     methods:{
-
+      addquestion(){
+        if(this.questionvalue!==''){
+        this.questionnumber++
+        }else{
+          alert('题干不能为空！！！')
+        }
+      },
+      showquestion(){
+        this.$router.push({
+          path:'/Questionshow',
+          query:{
+            "style":this.value,
+            "content":this.questionvalue
+          }
+        })
+      }
     }
 }
 </script>
@@ -46,6 +90,7 @@ export default {
   border-radius: 15px;
   margin-left: 80px;
   margin-top: 20px;
+  cursor: pointer;
 }
 .questionCard img{
   width: 30px;
