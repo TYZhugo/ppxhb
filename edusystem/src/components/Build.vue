@@ -61,7 +61,7 @@
 </template>
 
 <script>
-
+import { ElMessage } from 'element-plus'
 export default {
     name:'Build',
     data(){
@@ -135,6 +135,10 @@ export default {
                     nexam.set('endtime',this.value2);
                     nexam.save().then(function(){
                         console.log('保存成功')
+                        ElMessage({
+                        message: '发布考试成功，可在考试发布页中查看.',
+                        type: 'success',
+                        })
                     })
                 }
             }
