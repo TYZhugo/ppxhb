@@ -8,6 +8,10 @@ import Manage from './components/Manage.vue'
 import Grades from './components/Grades.vue'
 import Build from './components/Build.vue'
 import Jiankong from './components/Jiankong.vue'
+import Classshow from './components/Classshow.vue'
+import Gradeshow from './components/Gradeshow.vue'
+import Correct from './components/Correct.vue'
+import Questionshow from './components/Questionshow.vue'
 
 const routers=createRouter({
     history:createWebHashHistory(),
@@ -44,6 +48,22 @@ const routers=createRouter({
         {
             path:'/Jiankong',
             component:Jiankong
+        },
+        {
+            path:'/Classshow',
+            component:Classshow
+        },
+        {
+            path:'/Gradeshow',
+            component:Gradeshow
+        },
+        {
+            path:'/Correct',
+            component:Correct
+        },
+        {
+            path:'/Questionshow',
+            component:Questionshow
         }
     ]
 
