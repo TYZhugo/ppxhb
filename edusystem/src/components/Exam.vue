@@ -8,7 +8,7 @@
       <button @click="threechange">待批改</button>
       </div>
       <div v-if="oneVisible" class="examFace">
-        <div v-for="item in this.list" v-bind:key="item" class="box1"><img :src="imgUrl1"><div class="examText"><p>{{item.attributes.examName}}</p><p>2021.1.30 8: 00--10:00</p></div> <el-popconfirm
+        <div v-for="item in this.list" v-bind:key="item" class="box1"><img :src="imgUrl1"><div class="examText"><p>{{item.attributes.examName}}</p><p>{{item.attributes.begintime}}--<br/>{{item.attributes.endtime}}</p></div> <el-popconfirm
         confirm-button-text="确定"
         cancel-button-text="取消"
         :icon="InfoFilled"
@@ -141,7 +141,7 @@ export default {
   margin-left: 10px;
 }
 .examDelt{
-  margin-left: 5px;
+  margin-left: 0px;
   margin-top: 10px;
   width: 10px;
   height: 10px;

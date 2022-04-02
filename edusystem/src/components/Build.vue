@@ -131,8 +131,10 @@ export default {
                     const exam=AV.Object.extend('exam');
                     const nexam= new exam();
                     nexam.set('examName',this.input1);
-                    nexam.set('begintime',this.value1);
-                    nexam.set('endtime',this.value2);
+                    var begintime=this.value1.toLocaleString()
+                    nexam.set('begintime',begintime);
+                    var endtime=this.value2.toLocaleTimeString()
+                    nexam.set('endtime',endtime);
                     nexam.save().then(function(){
                         console.log('保存成功')
                         ElMessage({

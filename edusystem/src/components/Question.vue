@@ -2,8 +2,8 @@
 <div>
   <div class="main">
   <div class="questionMain">
-  <div class="questionCard">
-    <div class="questionName" @click="showquestion">
+  <div class="questionCard" @click="showquestion">
+    <div class="questionName" >
     <img :src="imgUrl1">
     <p>大学物理</p>
     </div>
@@ -65,6 +65,18 @@ export default {
       addquestion(){
         if(this.questionvalue!==''){
         this.questionnumber++
+         const AV = require('leancloud-storage');
+      AV.init({
+          appId: "pTtwtgVghMG7r3ReP8EkNEEI-gzGzoHsz",
+          appKey: "vky0hDUeQiaK50ay78CsgMBz",
+          serverURL: "https://pttwtgvg.lc-cn-n1-shared.com"
+        });
+        const newquestion=new AV.Object.extend('questions')
+        const nnewquestion=new newquestion()
+        nnewquestion.set('question',this.questionvalue)
+        nnewquestion.save().then(function(){
+          console.log('保存成功')
+          })
         }else{
           alert('题干不能为空！！！')
         }
@@ -78,6 +90,7 @@ export default {
           }
         })
       }
+      
     }
 }
 </script>

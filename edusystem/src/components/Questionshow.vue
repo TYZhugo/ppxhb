@@ -1,7 +1,6 @@
 <template>
   <div class="questionshowcard">
-      <p>选择题</p>
-      <p>{{content}}</p>
+      <p v-for="item in this.list" v-bind:key="item">{{item.attributes.question}}</p>
   </div>
 </template>
 
@@ -11,9 +10,30 @@ export default {
     data(){
         return{
             style:this.$route.query.style,
-            content:this.$route.query.content
+            content:this.$route.query.content,
+            list:{}
         }
-    }
+    },
+    methods:{
+        
+    },
+      created:function(){
+
+      const AV = require('leancloud-storage');
+      AV.init({
+          appId: "pTtwtgVghMG7r3ReP8EkNEEI-gzGzoHsz",
+          appKey: "vky0hDUeQiaK50ay78CsgMBz",
+          serverURL: "https://pttwtgvg.lc-cn-n1-shared.com"
+        });
+      const query=new AV.Query('questions');
+      query.lessThan('id',300);
+      query.find().then((questions)=>{
+        console.log(questions)
+        this.list=questions
+      })
+      console.log(this.list)
+    
+  }
 }
 </script>
 
