@@ -3,7 +3,7 @@
   
   <div class="main">
 <div class="classs">
-   <div v-for="item in this.list" v-bind:key="item" @click='showgrades' class="ss"><div class="homeImg"><img :src="imgUrl1"></div>{{item.attributes.classname}}</div>
+   <div v-for="item in this.list" v-bind:key="item" @click='showgrades(item.attributes.classid)' class="ss"><div class="homeImg"><img :src="imgUrl1"></div>{{item.attributes.classname}}</div>
 </div>
   </div>
 </div>
@@ -19,8 +19,13 @@ export default {
         }
     },
     methods:{
-      showgrades(){
-        this.$router.push('/Gradeshow')
+      showgrades(classid){
+        this.$router.push({
+          path:'/Gradeshow',
+         query:{
+           "classid":classid
+         }
+        })
       }
     },
     components:{

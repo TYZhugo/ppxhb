@@ -1,7 +1,10 @@
 <template>
+<div>
+  <el-page-header @back="goBack" />
   <div class="questionshowcard">
       <p v-for="item in this.list" v-bind:key="item">{{item.attributes.question}}</p>
   </div>
+</div>
 </template>
 
 <script>
@@ -15,7 +18,9 @@ export default {
         }
     },
     methods:{
-        
+        goBack(){
+          this.$router.push('/Question')
+        }
     },
       created:function(){
 
