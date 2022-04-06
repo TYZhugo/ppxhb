@@ -3,7 +3,7 @@
   <div class="ppp">
   <img :src="imgUrl1"/>
   </div>
-  <h2>123</h2>
+  <h2>陈亦可</h2>
   <hr/>
   <el-menu
     default-active="/"
