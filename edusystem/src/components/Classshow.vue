@@ -1,12 +1,14 @@
 <template>
   <div>
     <el-page-header @back="goBack" />
+     <el-scrollbar height="700px">
   <el-descriptions
     title="班级人员名单"
     direction="vertical"
     :column="6"
     class="students"
   >
+ 
   <div v-for="item in this.list" v-bind:key="item">
     <el-descriptions-item label="姓名" width="100px">{{item.attributes.name}}</el-descriptions-item>
     <el-descriptions-item label="班级" width="100px">软件2101</el-descriptions-item>
@@ -17,6 +19,7 @@
     <el-descriptions-item label="给老师留言" width="300px">无</el-descriptions-item>
   </div>
   </el-descriptions>
+    </el-scrollbar>
   <p>{{classid}}</p>
   </div>
 </template>
