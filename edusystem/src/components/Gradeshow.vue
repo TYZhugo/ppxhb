@@ -12,7 +12,7 @@
     <el-descriptions-item label="班级" width="100px">软件2101</el-descriptions-item>
     <el-descriptions-item label="学号" :span="2" width="150px">100001</el-descriptions-item>
     <el-descriptions-item label="目前考试情况" width="100px">
-      <el-tag size="large" type="warning">良好</el-tag>
+      <el-tag size="large" :type="item.attributes.grade>=60?'success':'warning'">良好</el-tag>
     </el-descriptions-item>
     <el-descriptions-item label="最近一次考试成绩" width="300px">{{item.attributes.grade}}</el-descriptions-item>
   </div>

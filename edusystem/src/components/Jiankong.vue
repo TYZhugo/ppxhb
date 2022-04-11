@@ -12,6 +12,9 @@
         <div v-for="i in 30" v-bind:key="i" class="JKcard"><input type="radio" v-if="jgshow"/></div>
             </div>
         </el-scrollbar>
+        <div class="jkwarning">
+            <p>已提醒</p>
+        </div>
   </div>
 </template>
 

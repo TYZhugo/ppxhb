@@ -8,7 +8,7 @@
       <button @click="threechange">待批改</button>
       </div>
       <div v-if="oneVisible" class="examFace">
-        <div v-for="item in this.list" v-bind:key="item" class="box1"><img :src="imgUrl1"><div class="examText"><p>{{item.attributes.examName}}</p><p>{{item.attributes.begintime}}--<br/>{{item.attributes.endtime}}</p></div> <el-popconfirm
+        <div v-for="item in this.list" v-bind:key="item" class="box1" ><img :src="imgUrl1"><div class="examText"><p>{{item.attributes.examName}}</p><p>{{item.attributes.begintime}}--<br/>{{item.attributes.endtime}}</p></div> <el-popconfirm
         confirm-button-text="确定"
         cancel-button-text="取消"
         :icon="InfoFilled"
@@ -77,6 +77,7 @@ export default {
         this.list=examinations
         console.log(examinations)
       })
+
     }
   },
   created:function(){
