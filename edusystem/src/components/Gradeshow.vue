@@ -1,6 +1,7 @@
 <template>
   <div>
     <el-page-header @back="goBack" />
+    <el-scrollbar height="700px">
   <el-descriptions
     title="班级人员名单"
     direction="vertical"
@@ -17,6 +18,7 @@
     <el-descriptions-item label="最近一次考试成绩" width="300px">{{item.attributes.grade}}</el-descriptions-item>
   </div>
   </el-descriptions>
+  </el-scrollbar>
   <p>{{classid}}</p>
   </div>
 </template>

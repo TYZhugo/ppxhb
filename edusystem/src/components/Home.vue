@@ -19,8 +19,13 @@
     <span>班级名称：</span>
     <input v-model="classname">
     <br/>
+    <br/>
     <span>班级人数：</span>
     <input type="number" v-model="classnumber">
+    <br/>
+    <br/>
+    <span>班级编号：</span>
+    <input v-model="classid">
     <br/>
     <template #footer>
       <span class="dialog-footer">
@@ -146,6 +151,7 @@ height:760px;
   cursor: pointer;
 }
 .addface input{
-  margin-top: 40px;
+  margin-top: 60px;
+  line-height: 20px;
 }
 </style>
