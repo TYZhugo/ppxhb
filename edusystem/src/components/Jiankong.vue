@@ -12,29 +12,27 @@
         <div v-for="i in 30" v-bind:key="i" class="JKcard"><input type="radio" v-if="jgshow"/></div>
             </div>
         </el-scrollbar>
-        <div class="jkwarning">
-            <p>已提醒</p>
+        <div class="jkwarning" v-if="jgshow1">
+            <p><svg viewBox="0 0 1024 1024" width="100px" height="100px" xmlns="http://www.w3.org/2000/svg" data-v-ba633cb8=""><path fill="white" d="M406.656 706.944 195.84 496.256a32 32 0 1 0-45.248 45.248l256 256 512-512a32 32 0 0 0-45.248-45.248L406.592 706.944z"></path></svg><br/>&nbsp;已提醒</p>
         </div>
   </div>
 </template>
 
 <script>
-import { ElMessage } from 'element-plus'
 export default {
     name:'Jiankong',
     data(){
         return{
-            jgshow:false
+            jgshow:false,
+            jgshow1:false
         }
     },
     methods:{
         jgchange(){
             this.jgshow=!this.jgshow
             if(!this.jgshow){
-            ElMessage({
-                message: '已提醒该同学.',
-                type: 'warning',
-            })
+                this.jgshow1=!this.jgshow1;
+            setTimeout(()=>{this.jgshow1=!this.jgshow1;},2000)
             }
         }
     }
@@ -70,5 +68,26 @@ export default {
 }
 .wranging:hover{
     cursor: pointer;
+}
+.jkwarning{
+    width: 400px;
+    height: 270px;
+    background-color: black;
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    opacity: 0.75;
+    border-radius: 10px;
+    animation: mymove 3s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    font-family: "宋体";
+}
+@keyframes mymove{
+    from{opacity: 0.75;}
+    to{opacity: 0.0;}
 }
 </style>
