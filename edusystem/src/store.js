@@ -3,8 +3,8 @@ const store=createStore({
     state(){
         return{
         Users:[{
-            username:'123',
-            password:'123'
+            username:'112110311',
+            password:'112110311'
         }
         ],
         islogin:false,
