@@ -1,14 +1,8 @@
 <template>
   <div v-show="!$store.state.islogin">
-      <div v-show="islogin" class="loginChoose">
-          <h2>请选择您的身份：</h2>
-          <button class="logbutton1" @click="teacher"><h2>我是教师</h2></button>
-          <br/>
-          <button class="logbutton2" @click="student"><h2>我是学生</h2></button>
-      </div>
-      <div class="login" v-show="isteacher">
+      <div class="login" v-show="!isteacher">
             <div class="LoginContent">
-            <h2>教师登录</h2>
+            <h2>管理员登录</h2>
             <input type="text"  placeholder="用户名(工号)" v-model="username"/>
             <br/>
             <input type="password"  placeholder="密码" v-model="password"/>
