@@ -1,0 +1,7 @@
+.homeContent{
+    height: 50px;
+    
+}
+.homeContent:hover{
+    cursor: pointer;
+}
