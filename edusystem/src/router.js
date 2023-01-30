@@ -2,16 +2,13 @@ import { createRouter ,createWebHashHistory} from 'vue-router'
 import store from './store'
 import Home from './components/Home.vue'
 import Login from './components/Login.vue'
-import Exam from './components/Exam.vue'
-import Question from './components/Question.vue'
-import Manage from './components/Manage.vue'
 import Grades from './components/Grades.vue'
-import Build from './components/Build.vue'
-import Jiankong from './components/Jiankong.vue'
-import Classshow from './components/Classshow.vue'
-import Gradeshow from './components/Gradeshow.vue'
-import Correct from './components/Correct.vue'
-import Questionshow from './components/Questionshow.vue'
+import Task from './components/Task.vue'
+import Completion from './components/Completion'
+import Prevevt from './components/Prevent'
+import Forewarm from './components/Forewarm'
+import Report from './components/Report'
+import Information from './components/Information'
 
 const routers=createRouter({
     history:createWebHashHistory(),
@@ -26,44 +23,32 @@ const routers=createRouter({
             name:'login'
         },
         {
-            path:'/Exam',
-            component:Exam
-        },
-        {
-            path:'/Question',
-            component:Question
-        },
-        {
-            path:'/Manage',
-            component:Manage
-        },
-        {
             path:'/Grades',
             component:Grades
         },
         {
-            path:'/Build',
-            component:Build
+            path:'/Task',
+            component:Task
         },
         {
-            path:'/Jiankong',
-            component:Jiankong
+            path:'/Completion',
+            component:Completion
         },
         {
-            path:'/Classshow',
-            component:Classshow
+            path:'/Prevent',
+            component:Prevevt
         },
         {
-            path:'/Gradeshow',
-            component:Gradeshow
+            path:'/Forewarm',
+            component:Forewarm
         },
         {
-            path:'/Correct',
-            component:Correct
+            path:'/Report',
+            component:Report
         },
         {
-            path:'/Questionshow',
-            component:Questionshow
+            path:'/Information',
+            component:Information
         }
     ]
 

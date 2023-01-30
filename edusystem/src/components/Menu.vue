@@ -1,41 +1,35 @@
 <template>
 <div class='qqq' v-if="this.$store.state.islogin">
-  <div class="ppp">
-  <img :src="imgUrl1"/>
-  </div>
-  <h2>陈亦可</h2>
-  <hr/>
   <el-menu
     default-active="/"
-    background-color="rgb(100, 45, 151)"
+    background-color="white"
     class="el-menu-vertical-demo"
     :collapse="isCollapse"
     @open="handleOpen"
     @close="handleClose"
     router='ture'
-    text-color="white"
-    active-text-color="white"
+    text-color="rgba(10, 120, 8, 1)"
   >
     <el-menu-item index="/" class="menuCard">
-      <template #title ><div class="tupian"><img :src="imgUrl2"></div>我的班级</template>
+      <template #title >班级管理<div class="tupian"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-029747aa=""><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"></path></svg></div></template>
     </el-menu-item>
     <el-menu-item index="/Grades" class="menuCard">
-      <template #title ><div class="tupian"><img :src="imgUrl3"></div>成绩管理</template>
+      <template #title >班级空间<div class="tupian"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-029747aa=""><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"></path></svg></div></template>
     </el-menu-item>
-    <el-menu-item index="/Question" class="menuCard">
-      <template #title ><div class="tupian"><img :src="imgUrl4"></div>我的题库</template>
+    <el-menu-item index="/Task" class="menuCard">
+      <template #title >班级任务<div class="tupian"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-029747aa=""><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"></path></svg></div></template>
     </el-menu-item>
-    <el-menu-item index="/Jiankong" class="menuCard">
-      <template #title ><div class="tupian"><img :src="imgUrl5"></div>实时监控</template>
+    <el-menu-item index="/Completion" class="menuCard">
+      <template #title >问卷完成情况<div class="tupian"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-029747aa=""><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"></path></svg></div></template>
     </el-menu-item>
-    <el-menu-item index="/Exam" class="menuCard">
-      <template #title><div class="tupian"><img :src="imgUrl6"></div>考试发布</template>
+    <el-menu-item index="/Prevent" class="menuCard">
+      <template #title >心理预防<div class="tupian"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-029747aa=""><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"></path></svg></div></template>
     </el-menu-item>
-    <el-menu-item index="/Build" class="menuCard">
-      <template #title><div class="tupian"><img :src="imgUrl7"></div>创建试卷</template>
+    <el-menu-item index="/Forewarm" class="menuCard">
+      <template #title>心理预警<div class="tupian"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-029747aa=""><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"></path></svg></div></template>
     </el-menu-item>
-    <el-menu-item index="/Manage" class="menuCard">
-      <template #title><div class="tupian"><img :src="imgUrl8"></div>批改卷子</template>
+    <el-menu-item index="/Information" class="menuCard">
+      <template #title>教师信息<div class="tupian"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-029747aa=""><path fill="currentColor" d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"></path></svg></div></template>
     </el-menu-item>
   </el-menu>
 </div>
@@ -46,14 +40,6 @@ export default {
   name:'Menu',
   data(){
     return{
-      imgUrl1:require("../assets/touxiang.png"),
-      imgUrl2:require("../assets/banji.png"),
-      imgUrl3:require("../assets/guanli.png"),
-      imgUrl4:require("../assets/question.png"),
-      imgUrl5:require("../assets/manager.png"),
-      imgUrl6:require("../assets/fabu.png"),
-      imgUrl7:require("../assets/chuangjian.png"),
-      imgUrl8:require("../assets/pigai.png")
       
     }
   }
@@ -62,32 +48,28 @@ export default {
 
 <style>
 .qqq{
-  width:300px;
-  height: 760px;
+  width:350px;
+  height: 700px;
   text-align: center;
-  background-color: rgb(100, 45, 151);
-
-}
-.ppp{
-  display: flex;
-  width: 300px;
-  height:160px;
-  justify-content: center;
-  align-items: center;
+  background-color:white;
+  margin-top: 40px;
 }
 .qqq h2{
-    color: white;
+    color: rgba(10, 120, 8, 1);
 }
-.ppp img{
-  width:90px
+.qqq li{
+  display: flex;
+  justify-content: space-between;
 }
 .tupian{
   display: flex;
-  height:45px;
-  width: 45px;
+  height:35px;
+  width: 35px;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 50%;
   margin-right: 10px;
+  color: white;
+  background-color: rgba(22, 196, 175, 1);
 }
 .tupian img{
   width:40px;
@@ -96,13 +78,20 @@ export default {
 .MenuDivier{
   width: 250px;
 }
-.qqq hr{
-  align-content: center;
-  width: 250px;
-  color: white;
+.el-menu-item.menuCard{
+  font-size: 40px;
+  border-bottom: 1px solid rgba(166, 166, 166, 1);
+}
+.el-menu-item.menuCard .tupian{
+  transform: rotate(0deg);
+  transition: all 0.2s ease-out;
 }
 .el-menu-item.is-active.menuCard{
-  background-color: rgb(80, 6, 129) !important;
-  border-left: 4px solid sandybrown;
+  color: rgba(10, 120, 8, 1);
+}
+.el-menu-item.is-active.menuCard .tupian{
+  transform: rotate(-90deg);
+  transition: all 0.2s ease-in;
+  font-family: '演示秋鸿楷';
 }
 </style>

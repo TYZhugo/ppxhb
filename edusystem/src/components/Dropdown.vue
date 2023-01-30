@@ -2,7 +2,7 @@
   <div class="menu-items" @click="isOpen = !isOpen">
     <el-dropdown>
     <span class="el-dropdown-link">
-      个人中心
+      <img :src="imagUrl"/>
       <el-icon class="el-icon--right">
         <arrow-down />
       </el-icon>
@@ -25,7 +25,8 @@ export default {
     emits:['click'],
     data(){
         return{
-            isOpen:false
+            isOpen:false,
+            imagUrl:require('../assets/Header.png')
         }
     },
     methods:{

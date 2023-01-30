@@ -7,7 +7,7 @@ const store=createStore({
             password:'112110311'
         }
         ],
-        islogin:false,
+        islogin:true,
         isteacher:true
         }
     },
